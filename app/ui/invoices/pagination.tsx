@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable react/require-default-props */
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
@@ -10,7 +11,7 @@ function PaginationNumber({
 	page,
 	href,
 	isActive,
-	position,
+	position = "middle",
 }: {
 	page: number | string;
 	href: string;
@@ -37,14 +38,10 @@ function PaginationNumber({
 	);
 }
 
-PaginationNumber.defaultProps = {
-	position: "middle",
-};
-
 function PaginationArrow({
 	href,
 	direction,
-	isDisabled,
+	isDisabled = false,
 }: {
 	href: string;
 	direction: "left" | "right";
@@ -75,10 +72,6 @@ function PaginationArrow({
 		</Link>
 	);
 }
-
-PaginationArrow.defaultProps = {
-	isDisabled: false,
-};
 
 export default function Pagination({ totalPages }: { totalPages: number }) {
 	// NOTE: comment in this code when you get to this point in the course
