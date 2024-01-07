@@ -1,3 +1,50 @@
 {
-  "extends": "next/core-web-vitals"
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"jest": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"next/core-web-vitals",
+		"airbnb",
+		"airbnb-typescript",
+		"plugin:import/typescript",
+		"plugin:prettier/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"project": ["./tsconfig.json"]
+	},
+	"plugins": ["react", "@typescript-eslint", "prettier"],
+	"rules": {
+		"react/jsx-filename-extension": [
+			"warn",
+			{ "extensions": [".ts", ".tsx", ".js", ".jsx"] }
+		],
+		"react/react-in-jsx-scope": "off",
+		"import/no-unresolved": "off",
+		"react-hooks/exhaustive-deps": "off",
+		"no-shadow": "off",
+		"react/jsx-uses-react": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/no-unescaped-entities": "off",
+		"no-underscore-dangle": "off",
+		"react/function-component-definition": "off",
+		"no-nested-ternary": "off"
+	},
+	"ignorePatterns": [
+		".next/",
+		"public/",
+		"scripts/",
+		"node_modules/",
+		".eslintrc.json",
+		"**/*.config.js"
+	]
 }
