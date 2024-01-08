@@ -11,7 +11,7 @@ function PaginationNumber({
 	page,
 	href,
 	isActive,
-	position = "middle",
+	position,
 }: {
 	page: number | string;
 	href: string;
